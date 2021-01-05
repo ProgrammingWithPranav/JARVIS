@@ -2,6 +2,7 @@ import pyttsx3
 import datetime
 import speech_recognition as sr
 import wikipedia
+import webbrowser
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -54,3 +55,23 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
+
+        elif 'open youtube' in query:
+            speak("Ok, opening YouTube")
+            webbrowser.open('https://www.youtube.com/')
+
+        elif 'open google' in query:
+            speak("Ok, opening Google")
+            webbrowser.open('https://www.google.co.in/')
+
+        elif 'open stack overflow' in query:
+            speak("Ok, opening stack overflow")
+            webbrowser.open('https://stackoverflow.com/')
+
+        elif 'open amazon' in query:
+            speak("Ok, opening amazon")
+            webbrowser.open('https://www.amazon.in/ref=nav_logo')
+
+        elif 'open gmail' in query:
+            speak("Ok, opening your G-Mail")
+            webbrowser.open('https://mail.google.com/mail/u/0/#inbox')
