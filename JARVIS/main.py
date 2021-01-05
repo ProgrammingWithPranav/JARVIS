@@ -1,6 +1,7 @@
 import pyttsx3
 import datetime
 import speech_recognition as sr
+import wikipedia
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -20,7 +21,9 @@ def wishMe():
     else:
         speak("Good Evening!")
 
-def takeCommand():
+def takeCommand(question=None):
+    if(question != None):
+        speak(question)
 
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -41,4 +44,13 @@ def takeCommand():
 
 if __name__ == "__main__":
     wishMe()
-    takeCommand()
+    speak("I am your desktop assistant, JARVIS(Just A Rather Very Intelligent System). How may I help you ?")
+    while True:
+        query = takeCommand().lower()
+
+        if 'wikipedia' in query:
+            query = takeCommand("Whatshould I search on wikipedia? ")
+            results = wikipedia.summary(query, sentences=2)
+            speak("According to Wikipedia")
+            print(results)
+            speak(results)
