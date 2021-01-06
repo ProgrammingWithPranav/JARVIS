@@ -72,6 +72,23 @@ if __name__ == "__main__":
             speak("Ok, opening amazon")
             webbrowser.open('https://www.amazon.in/ref=nav_logo')
 
-        elif 'open gmail' in query:
+        elif 'open gmail' in query: 
             speak("Ok, opening your G-Mail")
             webbrowser.open('https://mail.google.com/mail/u/0/#inbox')
+
+        elif "open the secret" in query:
+            speak("Ok, opening the secret website")
+            webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+        elif "open the other secret" in query:
+            speak("Opening the other secret website")
+            webbrowser.open("https://www.techwithtim.net/")
+
+        elif "code jam" in query:
+            speak("There is more information about the Timathon Code Jam in the website. Opening it now.")
+            webbrowser.open("https://twtcodejam.net/")
+
+        elif 'the time' in query:
+                    strTime = datetime.datetime.now().strftime("%H:%M:%S")
+                    speak(f"The time is: {strTime}")
+                    print(f"The time: {strTime}")
